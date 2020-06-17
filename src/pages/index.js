@@ -1,22 +1,29 @@
 import React from "react"
 import { Link } from "gatsby"
 
+import Header from "../components/header"
 import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+import TaskList from "../components/tasklist"
+import TaskForm from "../components/taskform"
+import TaskListContextProvider from "../context/TaskListContext"
+import Task from "../components/task"
+
+import indexStyles from "../components/styles/index.module.css"
 
 const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link> <br />
-    <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
-  </Layout>
+  <TaskListContextProvider>
+    <Layout>
+      <div className={indexStyles.container}>
+        <div className={indexStyles.appWrapper}>
+          <Header />
+          <div className={indexStyles.main}>
+            <TaskForm />
+            <TaskList />
+          </div>
+        </div>
+      </div>
+    </Layout>
+  </TaskListContextProvider>
 )
 
 export default IndexPage

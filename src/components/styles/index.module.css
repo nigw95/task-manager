@@ -1,0 +1,38 @@
+.container {
+  background: linear-gradient(70deg, rgb(26, 72, 156) 50%, #091797 0);
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.appWrapper {
+  background-color: #292f38;
+  width: 25%;
+  height: 600px;
+  padding: 30px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
+  margin-bottom: 50px;
+  width: 100%;
+}
+
+@media only screen and (max-width: 450px) {
+  .appWrapper {
+    width: 300px;
+  }
+}
+
+@media only screen and (min-width: 450px) {
+  .appWrapper {
+    width: 450px;
+  }
+}
